@@ -10,12 +10,22 @@ def view_file():
         reader=csv.DictReader(csv_file)
         # get the first row
         row=next(reader)
-        print("[Extract] Printing the first row: ", row)        
+        print("[Extract] Printing the first row: ", row) 
+
+def data_frame():
+    #  """function that takes in the file-path and converts it into a dataframe """
+    file=pd.read_csv(path)
+    # file=file.head()
+    return file
+
 
 
 def main():
     print("[Extract] Start...")   
     view_file()
+    print("[Extract]Convert to dataframe...")
+    data_frame()
     print("[Extract] End...")
+    
 
   
